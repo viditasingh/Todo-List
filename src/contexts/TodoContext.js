@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 
 export const TodoContext = createContext({
-    Todos: [
+    todos: [
         {
             id: 1,
             title: "todo msg",
@@ -12,8 +12,8 @@ export const TodoContext = createContext({
     add: (title)=>{},
     complete: (id)=>{},
     edit: (todo, id)=>{},
-    delete: (id)=>{}
-    
+    deleteTask: (id)=>{}
+
 });
 
 
