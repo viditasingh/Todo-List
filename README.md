@@ -15,12 +15,16 @@ A simple, elegant todo list application built with React that allows users to ma
 - Local Storage for data persistence
 - Tailwind CSS for styling
 
+## Screenshot
+![project preview](https://i.ibb.co/dJQt41tm/Screenshot-2025-05-16-151326.png)
+
+
 ## Installation and Setup
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/todo-list-react.git
-cd todo-list-react
+git clone https://github.com/yourusername/Todo-List
+cd Todo-List
 ```
 
 2. Install dependencies:
