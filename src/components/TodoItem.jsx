@@ -2,6 +2,18 @@ import React from 'react'
 
 function TodoItem({ todo }) {
     
+    const [isTodoEditable, setIsTodoEditable] = useState(false)
+    const [todoMessage, setTodoMessage] = useState(todo.title)
+    const {edit, complete, deleteTask} = useTodo()
+
+    const editTodo = ()=>{
+        edit(todo.id,{...todo, title:todoMessage})
+        setIsTodoEditable(false)
+    }
+
+    const toggleCompleted = ()=>{
+        complete(todo.id)
+    }
 
     return (
         <div
@@ -21,7 +33,7 @@ function TodoItem({ todo }) {
                     isTodoEditable ? "border-black/10 px-2" : "border-transparent"
                 } ${todo.completed ? "line-through" : ""}`}
                 value={todoMsg}
-                onChange={(e) => setTodoMsg(e.target.value)}
+                onChange={(e) => setTodoMessage(e.target.value)}
                 readOnly={!isTodoEditable}
             />
             {/* Edit, Save Button */}
@@ -41,7 +53,7 @@ function TodoItem({ todo }) {
             {/* Delete Todo Button */}
             <button
                 className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0"
-                onClick={() => deleteTodo(todo.id)}
+                onClick={() => deleteTask(todo.id)}
             >
                 ❌
             </button>
