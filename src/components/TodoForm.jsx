@@ -1,4 +1,5 @@
-import React, { use } from 'react'
+import React, { useState } from 'react'
+import { useTodo } from '../contexts'
 
 function TodoForm() {
     
@@ -17,7 +18,7 @@ function TodoForm() {
   }
 
     return (
-        <form onSubmit={{addTodo}} className="flex">
+        <form onSubmit={addTodo} className="flex">
             <input
                 type="text"
                 placeholder="Write Todo..."
